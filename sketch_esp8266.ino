@@ -3,7 +3,7 @@
 
 const char* ssid = "ssid_name";
 const char* password = "wifi_password";
-const char* host = "domain.in";
+const char* host = "domain.com";
 const char* endpoint = "/url.php";
 const String authorizationKey = "auth_key";
 
@@ -46,7 +46,7 @@ void loop() {
   if (client.connect(host, 443)) {
     Serial.println("Connected to server - Sending GET request");
 
-    String url = String(endpoint) + "?api_type=Motor";
+    String url = String(endpoint) + "?type=api_type";
     client.println("GET " + url + " HTTP/1.1");
     client.println("Host: " + String(host));
     client.println("Authorization: Bearer " + authorizationKey);
